@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    root: DEBUG
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://office_.pergersoft.hu/auth/realms/pssecurity/
+          jwk-set-uri: https://office.pergersoft.hu/auth/realms/pssecurity/protocol/openid-connect/certs
