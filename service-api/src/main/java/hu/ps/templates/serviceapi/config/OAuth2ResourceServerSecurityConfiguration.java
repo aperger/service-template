@@ -30,6 +30,7 @@ public class OAuth2ResourceServerSecurityConfiguration {
         // @formatter:off
         http.cors().and()
             .authorizeHttpRequests((authorize) -> authorize
+                .requestMatchers("/actuator/health**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/message/**").hasAuthority("SCOPE_message:read")
                 .requestMatchers(HttpMethod.POST, "/message/**").hasAuthority("SCOPE_message:write")
                 .anyRequest().authenticated()
