@@ -14,6 +14,11 @@ import org.springframework.security.web.SecurityFilterChain;
 /*
 https://www.baeldung.com/spring-security-oauth-resource-server
 https://github.com/Baeldung/spring-security-oauth
+
+
+ResourceServerProxy:
+https://laurspilca.com/consuming-an-endpoint-protected-by-an-oauth-2-resource-server-from-a-spring-boot-service/
+
 */
 @Configuration
 @EnableWebSecurity
