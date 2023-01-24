@@ -25,11 +25,11 @@
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-starter-web</artifactId> 
     </dependency>  
-    <dependency> 
+    <dependency>
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-starter-oauth2-resource-server</artifactId> 
     </dependency>  
-    <dependency> 
+    <dependency>
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-starter-security</artifactId> 
     </dependency>
@@ -41,6 +41,16 @@
       <groupId>org.projectlombok</groupId>  
       <artifactId>lombok</artifactId>  
       <optional>true</optional> 
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.0.2</version>
     </dependency>
 
     <dependency> 
@@ -74,7 +84,14 @@
     <plugins> 
       <plugin> 
         <groupId>org.springframework.boot</groupId>  
-        <artifactId>spring-boot-maven-plugin</artifactId>  
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build-info</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration> 
           <excludes> 
             <exclude> 

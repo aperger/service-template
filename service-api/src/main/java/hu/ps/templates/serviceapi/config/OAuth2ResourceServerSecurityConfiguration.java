@@ -35,9 +35,13 @@ public class OAuth2ResourceServerSecurityConfiguration {
         // @formatter:off
         http.cors().and()
             .authorizeHttpRequests((authorize) -> authorize
+                .requestMatchers("/").permitAll()
+                .requestMatchers("/api-docs/**").permitAll()
+                .requestMatchers("/favicon.ico").permitAll()
                 .requestMatchers("/actuator/health**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/message/**").hasAuthority("SCOPE_message:read")
-                .requestMatchers(HttpMethod.POST, "/message/**").hasAuthority("SCOPE_message:write")
+                .requestMatchers(HttpMethod.GET, "/api/message/welcome").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/message/secret/**").hasAuthority("SCOPE_message:read")
+                .requestMatchers(HttpMethod.POST, "/api/message/secret/**").hasAuthority("SCOPE_message:write")
                 .anyRequest().authenticated()
             )
             .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
@@ -52,3 +56,4 @@ public class OAuth2ResourceServerSecurityConfiguration {
     }
 
 }
+
