@@ -4,12 +4,12 @@
 
 Sample resource server secured with OAuth 2.0/OpenID.
 - The current configuration uses a Keycloak Authorization server
-- The CORS is fully enabled
+- The CORS is fully enabled (all sources, all method)
 - Open API 3.0 (with Swagger UI) is available, these URL's are publicly available
 - a GitHub action is responsible to deploy the service into Azure,
   the event is starting when we push changes into `main` branch 
 
-is it possible to run this service locally. The URL of authorization server need change:
+It is possible to run this service locally. The URL of authorization server need change:
 
 ```yaml
 spring:
