@@ -10,8 +10,18 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://office_.pergersoft.hu/auth/realms/pssecurity/
-          jwk-set-uri: https://office.pergersoft.hu/auth/realms/pssecurity/protocol/openid-connect/certs
+          # need for Microsoft
+          audiences: ${AZURE_CLIENT_ID}
+
+
+          ## Need for single tenet solution only
+          #issuer-uri: https://office_.pergersoft.hu/auth/realms/pssecurity/
+          #jwk-set-uri: https://office.pergersoft.hu/auth/realms/pssecurity/protocol/openid-connect/certs
+
+          #issuer-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/
+          #jwk-set-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/discovery/v2.0/keys/
+          ## need for Microsoft
+          #audiences: ${AZURE_CLIENT_ID}
 
 
 springdoc:
