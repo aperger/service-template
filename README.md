@@ -2,14 +2,15 @@
 ### Resource Server with Spring Boot OAuth 2.0 
 ##### (micro-service)
 
-Sample resource server secured with OAuth 2.0/OpenID.
-- The current configuration uses a Keycloak Authorization server
+A sample resource server in service-template directory, which is secured with OAuth 2.0/OpenID:
+- The current configuration uses two authorization server (the URL's are hardcoded)
+  - Keycloak
+  - Microsoft Online/Live
 - The CORS is fully enabled (all sources, all method)
 - Open API 3.0 (with Swagger UI) is available, these URL's are publicly available
-- a GitHub action is responsible to deploy the service into Azure,
-  the event is starting when we push changes into `main` branch 
+- a GitHub action is responsible to deploy the service into Azure, the event is starting when we push changes into `main` branch.
 
-It is possible to run this service locally. The URL of authorization server need change:
+It is possible to run this service locally. In the current solution we have only one configurable item in the application. We need to set a valid client id of the registered appliucation of Azure, which uses this resource. This value is store in AZURE_CLIENT_ID enviroment variable.
 
 ```yaml
 spring:
@@ -17,9 +18,11 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://<keycloak-authorizton-server>/auth/realms/<real-name>/
-          jwk-set-uri: https://<keycloak-authorizton-server>/auth/realms/<real-name>/protocol/openid-connect/certs
+          audiences: ${AZURE_CLIENT_ID}
 ```
+
+
+
 
 The deployed version is available here:
 - https://ps-service-api.azurewebsites.net/
