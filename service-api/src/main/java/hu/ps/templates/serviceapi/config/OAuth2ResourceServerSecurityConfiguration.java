@@ -34,9 +34,9 @@ public class OAuth2ResourceServerSecurityConfiguration {
 
 
     /* need if we use signe tenant
-    @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}")
+    @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri:#{null}(}")
     String issuerUri;
-    @Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri}")
+    @Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri:#{null}}")
     String jwkSetUri;
     */
 
