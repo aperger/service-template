@@ -33,10 +33,8 @@
   </properties>
 
   <modules>
-    <!-- module>app-frontend</module -->
     <module>service-api</module>
     <module>spring-common</module>
-
   </modules>
 
   <dependencies>
