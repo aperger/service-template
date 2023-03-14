@@ -21,7 +21,7 @@ public class MessageController {
     public Mono<String> index(@AuthenticationPrincipal Jwt jwt) {
         String name = jwt.getClaim("name");
         String t = ZonedDateTime.now().format(DateTimeFormatter.ISO_ZONED_DATE_TIME);
-        return Mono.just(String.format("Hello authenticated user -> %s (%s)!", name != null ? name : jwt.getSubject(), t));
+        return Mono.just(String.format("Hello authenticated user -> %s (%s) - Webflux!", name != null ? name : jwt.getSubject(), t));
     }
 
     @GetMapping("/secret")
