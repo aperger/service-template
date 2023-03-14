@@ -20,6 +20,16 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtIss
  * https://github.com/sdoxsee/examples/blob/master/multi-tenant-jwt-resourceserver/complex/src/main/java/ca/simplestep/example/resourceserver/jwt/complex/config/tenant/TenantJwtIssuerValidator.java
  *
  * https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/multitenancy.html
+ *
+ *
+ * https://www.baeldung.com/spring-security-oauth-resource-server
+ * https://github.com/Baeldung/spring-security-oauth
+ *
+ * ResourceServerProxy:
+ * https://laurspilca.com/consuming-an-endpoint-protected-by-an-oauth-2-resource-server-from-a-spring-boot-service/
+ *
+ * Need to set for role for the application!
+ * https://learn.microsoft.com/en-us/answers/questions/422202/access-token-validating-fails-with-jwtsecuritytoke
  */
 @Configuration
 @EnableConfigurationProperties(ResourceServerProperties.class)
