@@ -34,8 +34,8 @@
 
   <modules>
     <module>spring-common</module>
-    <module>service-api</module>
-    <module>reactive-service-api</module>
+    <module>servlet-api</module>
+    <module>reactive-api</module>
   </modules>
 
   <dependencies>

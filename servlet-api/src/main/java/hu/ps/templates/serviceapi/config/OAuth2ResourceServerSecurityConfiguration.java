@@ -1,9 +1,7 @@
 package hu.ps.templates.serviceapi.config;
 
-import hu.ps.common.config.ResourceServerProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,18 +12,14 @@ import org.springframework.security.web.SecurityFilterChain;
 https://www.baeldung.com/spring-security-oauth-resource-server
 https://github.com/Baeldung/spring-security-oauth
 
-
 ResourceServerProxy:
 https://laurspilca.com/consuming-an-endpoint-protected-by-an-oauth-2-resource-server-from-a-spring-boot-service/
 
-
 Need to set for role for the application!
 https://learn.microsoft.com/en-us/answers/questions/422202/access-token-validating-fails-with-jwtsecuritytoke
-
 */
 @Configuration
 @EnableWebSecurity
-@Import(value = {ResourceServerProperties.class})
 public class OAuth2ResourceServerSecurityConfiguration {
 
     JwtIssuerAuthenticationManagerResolver authenticationManagerResolver = new JwtIssuerAuthenticationManagerResolver

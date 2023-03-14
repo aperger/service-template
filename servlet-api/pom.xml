@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version> 
   </parent>  
   <groupId>hu.ps.templates</groupId>  
-  <artifactId>service-api</artifactId>  
+  <artifactId>servlet-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>  
   <name>REST API Service (Servlet)</name>
   <description>Resource Server with Spring Boot OAuth 2.0</description>  
@@ -45,12 +45,6 @@
 
     <!-- library -->
     <dependency>
-      <groupId>hu.ps.common</groupId>
-      <artifactId>spring-common</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
@@ -71,23 +65,13 @@
       <scope>test</scope> 
     </dependency>  
     <!--dependency>
-			<groupId>com.squareup.okhttp3</groupId>
-			<artifactId>mockwebserver</artifactId>
-			<scope>test</scope>
-		</dependency--> 
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>mockwebserver</artifactId>
+      <scope>test</scope>
+    </dependency-->
   </dependencies>  
-  <dependencyManagement> 
-    <dependencies> 
-      <dependency> 
-        <groupId>org.springframework.cloud</groupId>  
-        <artifactId>spring-cloud-dependencies</artifactId>  
-        <version>${spring-cloud.version}</version>  
-        <type>pom</type>  
-        <scope>import</scope> 
-      </dependency> 
-    </dependencies> 
-  </dependencyManagement>  
-  <build> 
+
+  <build>
     <plugins> 
       <plugin> 
         <groupId>org.springframework.boot</groupId>  
@@ -98,15 +82,21 @@
               <goal>build-info</goal>
             </goals>
           </execution>
+          <execution>
+            <id>standalone-jar</id>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
         </executions>
-        <configuration> 
+        <!-- configuration>
           <excludes> 
             <exclude> 
               <groupId>org.projectlombok</groupId>  
               <artifactId>lombok</artifactId> 
             </exclude> 
           </excludes> 
-        </configuration> 
+        </configuration-->
       </plugin>  
       <plugin> 
         <groupId>com.microsoft.azure</groupId>  
@@ -116,7 +106,7 @@
           <schemaVersion>v2</schemaVersion>  
           <subscriptionId>007a098e-914a-4dbc-9d98-2daca5554916</subscriptionId>  
           <resourceGroup>spring_rg</resourceGroup>  
-          <appName>ps-service-api</appName>  
+          <appName>ps-servlet-api</appName>
           <pricingTier>B2</pricingTier>  
           <region>westeurope</region>  
           <runtime> 
@@ -135,7 +125,22 @@
             </resources> 
           </deployment> 
         </configuration> 
-      </plugin> 
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>  <!-- depending on your project -->
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+        </plugin>
     </plugins> 
   </build> 
 </project>
