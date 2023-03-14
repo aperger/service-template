@@ -1,0 +1,27 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web:
+          cors:
+            reactive: DEBUG
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # need for Microsoft
+          audiences: ${AZURE_CLIENT_ID}
+
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    path: /

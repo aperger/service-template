@@ -6,7 +6,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Getter
