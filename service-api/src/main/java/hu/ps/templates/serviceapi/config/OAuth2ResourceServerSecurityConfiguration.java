@@ -33,7 +33,7 @@ public class OAuth2ResourceServerSecurityConfiguration {
                     "https://office.pergersoft.hu/auth/realms/pssecurity");
 
 
-    /* need if we use signe tenant
+    /* need if we use signe tenant, DO NOT DELETE IT!!
     @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri:#{null}(}")
     String issuerUri;
     @Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri:#{null}}")

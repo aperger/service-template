@@ -10,7 +10,7 @@
   <groupId>hu.ps.templates</groupId>  
   <artifactId>service-api</artifactId>  
   <version>0.0.1-SNAPSHOT</version>  
-  <name>REST API Service</name>  
+  <name>REST API Service (Servlet)</name>
   <description>Resource Server with Spring Boot OAuth 2.0</description>  
   <dependencies> 
     <!--dependency>
