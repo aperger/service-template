@@ -10,8 +10,8 @@
   <groupId>hu.ps.templates</groupId>  
   <artifactId>servlet-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>  
-  <name>REST API Service (Servlet)</name>
-  <description>Resource Server with Spring Boot OAuth 2.0</description>  
+  <name>servlet-api</name>
+  <description>REST API (Servlet) - Resource server secured with OpenID</description>
   <dependencies> 
     <!--dependency>
 			<groupId>org.springframework.boot</groupId>

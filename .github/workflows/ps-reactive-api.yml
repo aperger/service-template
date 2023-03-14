@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/service-api/target/*.jar'
+          path: '${{ github.workspace }}/reactive-api/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest

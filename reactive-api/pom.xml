@@ -12,8 +12,8 @@
 	<groupId>hu.ps.templates</groupId>
 	<artifactId>reactive-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>reactive-service-template</name>
-	<description>Reactive resource server secured with OAuth2</description>
+	<name>reactive-api</name>
+	<description>REST API (Reactive) - Resource server secured with OpenID</description>
 
 	<dependencyManagement>
 		<dependencies>

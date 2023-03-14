@@ -12,7 +12,7 @@ public class OpenApiConfig {
     public OpenAPI openAPI(BuildProperties buildProperties) {
         final var version = buildProperties.getVersion() != null ? buildProperties.getVersion() : "v0.0.0";
         return new OpenAPI().info(new io.swagger.v3.oas.models.info.Info()
-                .title("REST Service API Template")
+                .title("REST API Template with Webflux technology")
                 .description("Template project to create resource server (micro-service)")
                 .version(version)
                 .contact(new io.swagger.v3.oas.models.info.Contact()
