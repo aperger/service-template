@@ -19,7 +19,7 @@ public class MessageController {
     public String index(@AuthenticationPrincipal Jwt jwt) {
         String name = jwt.getClaim("name");
         String t = ZonedDateTime.now().format(DateTimeFormatter.ISO_ZONED_DATE_TIME);
-        return String.format("Hello authenticated user -> %s (%s)!", name != null ? name : jwt.getSubject(), t);
+        return String.format("Hello authenticated user -> %s (%s) - Servlet!", name != null ? name : jwt.getSubject(), t);
     }
 
     @GetMapping("/secret")
