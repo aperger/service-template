@@ -22,11 +22,12 @@ spring:
 ```
 
 
+#### Deployments
+Not all the time there are available, sorry :-(
 
-
-The deployed version is available here:
-- https://ps-service-api.azurewebsites.net/
-- not all the time is available, sorry :-(
+The deployed versions are available here:
+- https://ps-servlet-api.azurewebsites.net/
+- https://ps-reactive-api.azurewebsites.net/
 
 The sample application which uses this resource servert is:
 - https://github.com/aperger/app-template
