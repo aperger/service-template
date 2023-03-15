@@ -107,7 +107,7 @@
           <subscriptionId>007a098e-914a-4dbc-9d98-2daca5554916</subscriptionId>  
           <resourceGroup>spring_rg</resourceGroup>  
           <appName>ps-servlet-api</appName>
-          <pricingTier>B2</pricingTier>  
+          <pricingTier>F1</pricingTier>
           <region>westeurope</region>  
           <runtime> 
             <os>Linux</os>  
