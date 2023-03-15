@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'ps-reactive-api'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F5AD7DF696854B7BAEC8AAEF418B152F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A23F82BE71F844A28BAF323158F0ABDA }}
           package: '*.jar'

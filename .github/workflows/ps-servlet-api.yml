@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'ps-servlet-api'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F5AD7DF696854B7BAEC8AAEF418B152F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_91EEA18CE9254C2984ADE08E7E747EA4 }}
           package: '*.jar'
