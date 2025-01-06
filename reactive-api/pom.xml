@@ -56,6 +56,7 @@
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-resolver-dns-native-macos</artifactId>
+			<version>4.1.93.Final</version>
 		</dependency>
 
 		<!-- dependency>

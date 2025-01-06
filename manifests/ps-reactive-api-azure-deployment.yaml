@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ps-reactive-api
+  labels:
+    app: ps-reactive-api
+    type: api
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ps-reactive-api
+      type: api
+  template:
+    metadata:
+      name: ps-reactive-api-pod
+      labels:
+        app: ps-reactive-api
+        type: api
+    spec:
+      containers:
+        - name: ps-reactive-api
+          image: acrpegersoft.azurecr.io/ps-reactive-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082

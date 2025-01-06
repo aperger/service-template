@@ -1,0 +1,39 @@
+name: Run a maven goal
+description: Setup Java/Maven and run a maven goal
+
+inputs:
+  java-version:
+    description: Java version (8, 11, 17, ...)
+    default: '17'
+    required: true
+  distribution:
+    description: Java distribution (microsoft, temurin, adopt)
+    default: temurin
+    required: true
+  app-directory:
+    description: The directory containing the parent pom.xml
+    default: '.'
+    required: false
+  maven-goal:
+    description: The goal you want to execute
+    required: true
+  cache-enabled:
+    description: Enable caching of maven dependencies
+    required: false
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-java@v4
+      with:
+        java-version: ${{ inputs.java-version }}
+        distribution: ${{ inputs.distribution }}
+        overwrite-settings: false
+        cache: ${{ inputs.cache-enabled == 'true' && 'maven' || '' }}
+        cache-dependency-path: ${{ inputs.app-directory }}/**/pom.xml
+
+    - name: Run maven goal
+      working-directory: "${{ inputs.app-directory }}"
+      run: |
+        mvn -v
+        mvn ${{inputs.maven-goal}}
+      shell: bash

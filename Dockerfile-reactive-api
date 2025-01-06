@@ -1,0 +1,22 @@
+FROM maven:3.9.9-eclipse-temurin-17 AS build
+
+WORKDIR /projects
+
+COPY pom.xml .
+COPY spring-common/src spring-common/src
+COPY spring-common/pom.xml spring-common/pom.xml
+COPY reactive-api/src reactive-api/src
+COPY reactive-api/pom.xml reactive-api/pom.xml
+COPY servlet-api/src servlet-api/src
+COPY servlet-api/pom.xml servlet-api/pom.xml
+# Build the application using Maven
+RUN mvn -U clean package -DskipTests
+
+FROM eclipse-temurin:17-jdk-focal
+ENV PORT 8082
+EXPOSE 8082
+
+COPY --from=BUILD /projects/reactive-api/target/*.jar /opt/app.jar
+WORKDIR /opt/
+CMD ["java", "-jar", "app.jar"]
+# CMD ["/bin/bash", "-c", "find -type f -name '*SNAPSHOT.jar' | xargs java -jar"]

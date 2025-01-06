@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ps-servlet-api
+  labels:
+    app: ps-servlet-api
+    type: api
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ps-servlet-api
+      type: api
+  template:
+    metadata:
+      name: ps-servlet-api-pod
+      labels:
+        app: ps-servlet-api
+        type: api
+    spec:
+      containers:
+        - name: ps-servlet-api
+          image: acrpegersoft.azurecr.io/ps-servlet-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
